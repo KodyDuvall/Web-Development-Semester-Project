@@ -90,7 +90,6 @@ function ButtonClick(){
         mean = CalculateMean(sum, entries.length);
 
         var e = document.getElementById("typeSelection");
-        var value = e.value;
         var text = e.options[e.selectedIndex].text;
 
         if(text === "Population"){//if population radio button is selected, this if condition will be true
