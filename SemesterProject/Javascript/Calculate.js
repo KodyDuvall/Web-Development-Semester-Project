@@ -1,4 +1,5 @@
 document.getElementById('ButtonID').addEventListener('click', ButtonClick);
+var buttonSound = new Audio("audio/ButtonSound.wav");
 
 let userInput = "";
 let tempString = "";
@@ -13,6 +14,8 @@ let standardDeviation;
 
 function ButtonClick(){
     window.localStorage.clear();
+    buttonSound.play();
+    
     sum = 0;
     mean = 0;
     variance = 0;
@@ -86,12 +89,16 @@ function ButtonClick(){
         sum = CalculateSum(entries);
         mean = CalculateMean(sum, entries.length);
 
-        if(document.getElementById('population').checked){//if population radio button is selected, this if condition will be true
+        var e = document.getElementById("typeSelection");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+
+        if(text === "Population"){//if population radio button is selected, this if condition will be true
             variance = CalculateVariance(mean, entries, entries.length);
             standardDeviation = Math.sqrt(variance);
         }
 
-        else if(document.getElementById('sample').checked){//if sample radio button is selected, this else if condition will be true
+        else if(text === "Sample"){//if sample radio button is selected, this else if condition will be true
             variance = CalculateVariance(mean, entries, entries.length - 1);
             standardDeviation = Math.sqrt(variance);
         }
