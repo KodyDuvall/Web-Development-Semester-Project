@@ -1,0 +1,79 @@
+h1.AlignHeaders{
+    text-align: center;
+}
+
+p{
+    font-size: larger;
+}
+
+p.TextboxPara{
+    font-size: larger;
+    text-align: center;
+}
+
+textarea{
+    resize: none;
+}
+
+div{
+    text-align: center;
+    position: relative;
+}
+
+img.PopSD{
+    width: 250px;
+    height: 150px;
+    float: right;
+    margin-right: 5%;
+}
+
+img.SampleSD{
+    width: 250px;
+    height: 150px;
+    float: right;
+    margin-right: 5%;
+}
+
+img.NormalDist{
+    width: 400px;
+    height: 350px;
+    float: right;
+    margin-right: 5%;
+    object-fit: cover;
+}
+
+button.button1 {
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    position:relative; left: 2rem; top: -3rem; /*I had to use pixels here for the top component instead of percentage. I don't know why.*/
+}
+
+input.sample{
+    /*position:relative; left:-22.6%;*/
+    position:relative; left:-23.5rem;
+}
+
+input.population{
+    position:relative; left:-22.85rem;
+}
+
+label.sample{
+    position:relative; left:-23.5em;
+}
+
+label.population{
+    position:relative; left:-22.85rem;
+}
+
+select{
+    margin-bottom: 2.65em;
+    text-align: center;
+    position: relative; left: -27.5em;
+    width: 8em;
+    height: 2em;
+}
+
+blockquote{
+    font-size: larger;
+}
