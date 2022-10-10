@@ -8,6 +8,17 @@
     <style>
         h1{
             text-align: center;
+            font-size: 200%;
+
+        }
+
+        fieldset{
+            width: 18em;
+            height: 5.5em;
+            color: black;
+            border: 10px solid #888;
+            border-right: 10px solid #666;
+            border-bottom: 10px solid #666;
         }
 
         label{
@@ -15,24 +26,48 @@
         }
 
         label.moveVariance{
-            margin-left: 5.31em;
+            margin-left: 4.8em;
         }
 
         label.moveMode{
-            margin-left: 6.5em;
+            margin-left: 5.6em;
         }
 
         label.moveMean{
-            margin-left: 6.51em;
+            margin-left: 6.47em;
         }
 
         label.moveSum{
-            margin-left: 6.95em;
+            margin-left: 6.15em;
         }
 
         label.moveStandardDeivation{
             margin-left: 1em;
         }
+
+        table{
+            border-spacing: 0em;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            size:20em;
+            font-size:x-large;
+        }
+
+        td.left{
+            padding-right: 2em;
+            text-align: left;
+        }
+
+        dialog{
+            position:relative; left: -43.5rem; top: -1rem;
+        }
+
+        video{
+            position: relative; top: -10em;
+
+        }
+
 
         p{
             font-size: larger;
@@ -40,45 +75,102 @@
     </style>
 </head>
 <body>
-    <h1>This is the second web page, the calculation page. This is a work in progress. I want to add many things to this page.
+    <!--Previous h1 tag:
+        This is the second web page, the calculation page. This is a work in progress. I want to add many things to this page.
         I want to embed a Desmos (graphing calculator website) graph somewhere on this page that has a graph drawn in it that
         represents the normal distribution curve of the values that the user has entered. I want to provide a breakdown of all 
         of the various values (sum, mean, mode, variance, and standard deviation) by showing the user all of those values' quantities and 
         providing an explanation of what each value means. I may also provide an image of each formula. At the bottom of this page 
         I want to provide an area where the user can enter another set of data entries if the user wishes to.
-    </h1>
+    -->
+    <h1>Results (This page is very underdeveloped and is a work in progress)</h1>
 
-    <p>Below are some labels that are being used to test website functionality using Javascript:</p>
+    <table border="5">
+        <tr>
+            <td colspan="2" style="text-align: center;"><b>Calculation Outcomes</b></td>
+        </tr>
+        <tr>
+            <td class="left">Sum: &#931;&#967;<sub>i</sub> = </td>
+            <td class="right" id="sumOutput"></td>
+        </tr>
 
-    <label>Sum:</label>
+        <tr>
+            <td class="left">Mean: &#956; = </td>
+            <td class="right" id="meanOutput"></td>
+        </tr>
+
+        <tr>
+            <td class="left">Mode: Mo = </td>
+            <td class="right" id="modeOutput">Not yet implemented</td>
+        </tr>
+
+        <tr>
+            <td class="left">Variance: &#963;<sup>2</sup> = </td>
+            <td class="right" id="varianceOutput"></td>
+        </tr>
+
+        <tr>
+            <td class="left">Standard Deviation: &#963; = </td>
+            <td class="right" id="standardDeviationOutput"></td>
+        </tr>
+    </table>
+    <!--
+    <label>Sum: &#931;&#967;<sub>i</sub> = </label>
     <label class="moveSum" id="sumOutput"></label>
-
     <br>
     <br>
 
-    <label>Mean:</label>
+    <label>Mean: &#956; = </label>
     <label class="moveMean" id="meanOutput"></label>
 
     <br>
     <br>
 
-    <label>Mode:</label>
+    <label>Mode: Mo = </label>
     <label class="moveMode" id="modeOutput">Not yet implemented</label>
 
     <br>
     <br>
 
-    <label>Variance:</label>
+    <label>Variance: &#963;<sup>2</sup> = </label>
     <label class="moveVariance" id="varianceOutput"></label>
 
     <br>
     <br>
 
-    <label>Standard Deviation:</label>
+    <label>Standard Deviation: &#963; =</label>
     <label class="moveStandardDeivation" id="standardDeviationOutput"></label>
+    -->
 
     <script type="text/javascript" src="Javascript/Calculate.js"></script> 
     <script type="text/javascript" src="Javascript/Results.js"></script> 
+    <br>
+    <br>
+    <dialog open>Click on the links below to learn more about these values!</dialog>
+    
+    <fieldset>
+    <nav>
+        <a href="https://en.wikipedia.org/wiki/Summation" target="_blank">Learn more about Sum.</a><br>
+        <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">Learn more about Mean.</a><br>
+        <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Learn more about Mode.</a><br>
+        <a href="https://en.wikipedia.org/wiki/Variance" target="_blank">Learn more about Variance.</a><br>
+        <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">Learn more about Standard Deviation.</a><br>
+    </nav>
+    </fieldset>
+
+    <br>
+    <center><video controls autoplay loop>
+        <source src="videos/CalculatorVideo.mp4" type="video/mp4">
+    </video></center>
+    <address style="float: right; position: relative; top: -5em" >
+        <details>
+            <summary>Contact information:</summary>
+            <!-- I wasn't sure where to put this. It makes the most sense to me that it appears at the bottom
+                of the second page-->
+            Dezmen Loving: daloving@my.okcu.edu <br>
+            Kody Duvall: kdduvall@my.okcu.edu
+        </details>
+    </address>
     
 </body>
 </html>

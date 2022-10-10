@@ -5,80 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Standard Deviation Calculator</title>
-    <style>
-        h1.AlignHeaders{
-            text-align: center;
-        }
-
-        p{
-            font-size: larger;
-        }
-
-        p.TextboxPara{
-            font-size: larger;
-            text-align: center;
-        }
-
-        textarea{
-            resize: none;
-        }
-
-        div{
-            text-align: center;
-            position: relative;
-        }
-
-        img.PopSD{
-            width: 250px;
-            height: 150px;
-            float: right;
-            margin-right: 5%;
-        }
-
-        img.SampleSD{
-            width: 250px;
-            height: 150px;
-            float: right;
-            margin-right: 5%;
-        }
-
-        img.NormalDist{
-            width: 400px;
-            height: 350px;
-            float: right;
-            margin-right: 5%;
-            object-fit: cover;
-        }
-
-        button.button1 {
-            color: black;
-            padding: 15px 32px;
-            text-align: center;
-            position:relative; left: 2rem; top: -3rem; /*I had to use pixels here for the top component instead of percentage. I don't know why.*/
-        }
-
-        input.sample{
-            /*position:relative; left:-22.6%;*/
-            position:relative; left:-23.5rem;
-        }
-
-        input.population{
-            position:relative; left:-22.85rem;
-        }
-
-        label.sample{
-            position:relative; left:-23.5em;
-        }
-
-        label.population{
-            position:relative; left:-22.85rem;
-        }
-
-    </style>
-    
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
 </head>
 <body>
+    <header>
     <h1 id="testh1" class="AlignHeaders">Standard Deviation Calculator <i>(Could potentially add a banner here)</i></h1>
+    
+    <br>
+    </header>
     <img class="NormalDist" src="Images/NormalDist.png"> <!--This image is pretty bad quality, I will try to find a better one later.-->
     <h2>What is Standard Deviation?</h2>
     <p>In statistics, the standard deviation refers to the measure of variation amongst a set of given data values, with relation to the mean of the set. 
@@ -107,45 +41,84 @@
 
     <img class="SampleSD" src="Images/Pop_SD.png">
     <h3>The population standard deviation.</h3>
-    <p>The population standard deviation is said to be a parameter. That is, it describes a number that represents an entire population. So a 
+    <p><blockquote> population standard deviation is said to be a <u><i>parameter</i></u>. That is, it describes a number that represents an entire population. So a 
         population data set must contain all members of a specified group. An example where one would need to use the population standard deviation 
         would be when a basketball team coach wants to determine the standard deviation and the mean of the scores for all members on his basketball team. The reason 
         the population standard deviation would be used here and not the sample standard deviation is because the coach is only concerned with the 
         members of his team. If the concern was with ALL basketball players (All players in the world), then he would need to use the sample standard deviation because his 
-        team would only be a sample of the entire group of all basketball players.
+        team would only be a sample of the entire group of all basketball players.</blockquote>
     </p>
 
     <img class="PopSD" src="Images/Sample_SD.png">
     <h3>The sample standard deviation.</h3>
-    <p>The sample standard deviation is considered to be a statistic. This means that the sample standard deviation is a calculation that is only 
+    <p><blockquote> The sample standard deviation is considered to be a <u><i>statistic</i></u>. This means that the sample standard deviation is a calculation that is only 
         derived from some members that are in a population. An example where one would need to use the sample standard deviation would be when a 
         biologist would want to determine the mean and standard deviation of the weight of a specific species of crab. It would be nearly impossible to 
         gather data for every member of the group (which would be every alive or recently dead crab of the target species), instead the biologist 
-        would only gather a sample of some members of the population. 
+        would only gather a sample of some members of the population. </blockquote>
     </p>
     <br>
     <br>
 
-    <h1 class="AlignHeaders">Run the calculation</h1>
+    <hr>
 
-    <p class="TextboxPara">Below the user can choose to calculate the popoulation/sample standard deviation by selecting the appropriate radio button. 
+    <h1 class="AlignHeaders"><pre>Run the calculation</pre></h1>
+    
+    <p class="TextboxPara">The user can choose to calculate the popoulation/sample standard deviation by selecting the appropriate option from the dropdown menu. 
         The text box below is where the user can input a series of  numeric data entries in order to calculate the population/sample 
         standard deviation. The user is expected to put a comma between each data entry. A comma does not go before the first entry
         or after the last entry. This is the only acceptable format. No calculation will occur if the user fails to input data entries using 
         this format. There will be a series of entries already in the text box to act as a demostration of how the user is expected to input data entries.
     </p>
 
-    <div>
+<!-- old input method. Keeping it in as a comment just incase I need to look back at it
     <input class="sample" type="radio" id="sample" name="deviation" value="Sample" checked="checked">
     <label class="sample" for="sample">Sample</label><br>
     <input class="population" type="radio" id="population" name="deviation" value="Population">
     <label class="population" for="population">Population</label><br>
-    <!--default textarea values: 41, 56, 48, 61, 41, 55, 56, 70, 39, 43-->
+-->
+
+    <div>
+    <audio id="sound">
+        <source id="sounds" src="audio/ButtonSound.wav" type="audio/wav">
+    </audio>
+
+
+    <!--
+        I have the button sound playing on the dropdown menu instead of the actual calculate button because the
+        sound that is played from the wav file isn't preserved when a new page loads. This means that if the user 
+        enters his or her data values using the correct format and then pressed the calculate button, the sound file 
+        cannot be heard because it will immediate load the next page. I will see if I can address this later, but for 
+        now at least it makes some sense for the sound to play once the user clicks on the dropdown menu
+    -->
+    <select onclick="playSound()" id="typeSelection">
+        <option id="sample" selected>Sample</option>
+        <option id="population" >Population</option>
+    </select>
+    
+    <script>
+        const soundFile = document.getElementById("sound"); 
+
+        function playSound() { 
+        soundFile.play(); 
+        } 
+    </script>
+
+    <form>
     <textarea name="Textarea" id="TextAreaID" cols="90" rows="6">41, 56, 48, 61, 41, 55, 56, 70, 39, 43</textarea>
-    <button class="button1" id="ButtonID" type="button">Calculate</button>
+    <button  class="button1" id="ButtonID" type="button">Calculate</button>
+    </form>
+
     <script type="text/javascript" src="Javascript/Calculate.js"></script><!--NOTE: It appears that the script tag must go AFTER the tags that are involved in the script-->
     <script type="text/javascript" src="Javascript/Results.js"></script> 
+    </div>
     <!--On click, go to next page: onclick="location.href='calculationPage.html'"-->
-</div>
+    <br>
+    <footer style="float: right;">
+        Creators:<br>
+        Dezmen Loving <br> <!-- I was not sure what else to do with the footer tag. -->
+        Kody Duvall
+    </footer>
+
 </body>
 </html>
