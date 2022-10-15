@@ -178,11 +178,7 @@ function DetermineModes(entriesArray){
     let resultantArray = []; //because I needed to return more than one variable. This might be considered bad practice, not sure lol
 
     entriesArray.sort(function(a, b){return b - a});
-
-    for(let i = 0; i < entriesArray.length; i++){
-        console.log("Entry #" + (i + 1) + ": " + entriesArray[i]);
-    }
-
+    
     for(let i = 0; i < entriesArray.length; i++){
         currentElement = entriesArray[i];
         count = 0;
