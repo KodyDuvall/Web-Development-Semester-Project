@@ -9,12 +9,18 @@
 </head>
 <body>
     <header>
-    <h1 id="testh1" class="AlignHeaders">Standard Deviation Calculator <i>(Could potentially add a banner here)</i></h1>
-    
+    <div class="stripColor">
+        <h1 id="testh1" class="AlignHeaders">Standard Deviation Calculator</h1>
+    </div>   
+
     <br>
     </header>
     <img class="NormalDist" src="Images/NormalDist.png"> <!--This image is pretty bad quality, I will try to find a better one later.-->
-    <h2>What is Standard Deviation?</h2>
+
+    <div class="stripColorAlternative">
+        <h2>What is Standard Deviation?</h2>
+    </div>   
+
     <p>In statistics, the standard deviation refers to the measure of variation amongst a set of given data values, with relation to the mean of the set. 
                 A measure of variation is often described as a way of showing how data is dispersed. Simply put, the standard 
                 deviation can show one how far apart his or her data points are spread out.
@@ -22,7 +28,10 @@
     <br>
     <br>
 
-    <h2>Why calculate the standard deviation?</h2>
+    <div class="stripColorAlternative">
+        <h2>Why calculate the standard deviation?</h2>
+    </div>
+
     <p>Since the standard deviation can inform one on how closely centralized or spread out a collection of outcomes are, 
         it often becomes easier to make inferences about the data, which can lead to more precise decisions. An example
         where the standard deviation is often calculated would be its uses in finance, which owners of a business can use to 
@@ -32,7 +41,10 @@
     <br>
     <br>
 
-    <h2>The types of standard deviation.</h2>
+    <div class="stripColor">
+        <h2>The types of standard deviation.</h2>
+    </div>
+
     <p>There are two types of standard deviation calculations. These two types are the <b>population standard deviation</b>, and the <b>sample standard deviation</b>. 
         The distinction between these two calculations is worth considering because of what is known as statistical bias. Statistical bias is often 
         defined as a systematic deviation from the actual value. It relates to a statistic that can underestimate or overestimate the population 
@@ -62,7 +74,9 @@
 
     <hr>
 
-    <h1 class="AlignHeaders"><pre>Run the calculation</pre></h1>
+    <div class="stripColor">
+        <h1 class="AlignHeaders"><pre>Run the calculation</pre></h1>
+    </div>
     
     <p class="TextboxPara">The user can choose to calculate the popoulation/sample standard deviation by selecting the appropriate option from the dropdown menu. 
         The text box below is where the user can input a series of  numeric data entries in order to calculate the population/sample 
@@ -99,7 +113,7 @@
     <script>
         const soundFile = document.getElementById("sound"); 
 
-        function playSound() { 
+        function playSound(){ 
         soundFile.play(); 
         } 
     </script>

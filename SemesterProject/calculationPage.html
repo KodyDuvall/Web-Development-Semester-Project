@@ -5,89 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Standard Deviation Calculator</title>
-    <style>
-        h1{
-            text-align: center;
-            font-size: 200%;
-
-        }
-
-        fieldset{
-            width: 18em;
-            height: 6.5em;
-            color: black;
-            border: 10px solid #888;
-            border-right: 10px solid #666;
-            border-bottom: 10px solid #666;
-        }
-
-        label{
-            font-size: larger;
-        }
-
-        label.moveVariance{
-            margin-left: 4.8em;
-        }
-
-        label.moveMode{
-            margin-left: 5.6em;
-        }
-
-        label.moveMean{
-            margin-left: 6.47em;
-        }
-
-        label.moveSum{
-            margin-left: 6.15em;
-        }
-
-        label.moveStandardDeivation{
-            margin-left: 1em;
-        }
-
-        label.modeLabel{
-            position: relative; top: -16em; left: 10em;
-            text-align: left;
-            margin: 2em;
-        }
-
-        table{
-            border-spacing: 0em;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative; left: -15em;
-            size: 20em;
-            font-size:x-large;
-        }
-
-        textarea{
-            border: 6px solid grey;
-            border-right: 6px solid grey;
-            border-bottom: 6px solid grey;
-            font-size: larger;
-            resize: none;
-            position: relative; top: -10em; left: 12em;
-        }
-
-        td.left{
-            padding-right: 2em;
-            text-align: left;
-        }
-
-        dialog{
-            position:relative; left: -43.5rem; top: -1rem;
-        }
-
-        video{
-            position: relative; top: -10em;
-
-        }
-
-        p{
-            font-size: larger;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="CSS/calculationPage.CSS">
 </head>
 <body>
     <!--Previous h1 tag:
@@ -98,7 +16,9 @@
         providing an explanation of what each value means. I may also provide an image of each formula. At the bottom of this page 
         I want to provide an area where the user can enter another set of data entries if the user wishes to.
     -->
-    <h1>Results (This page is very underdeveloped and is a work in progress)</h1>
+    <div class="stripColor">
+        <h1>Results</h1>
+    </div>
 
     <div style="text-align: center;">
         <table border="5">
@@ -148,23 +68,30 @@
     <script type="text/javascript" src="Javascript/Results.js"></script> 
     <br>
     <br>
-    <dialog open>Click on the links below to learn more about these values!</dialog>
-    
-    <fieldset>
-    <nav>
-        <a href="https://en.wikipedia.org/wiki/Summation" target="_blank">Learn more about Sum.</a><br>
-        <a href="https://en.wikipedia.org/wiki/Median" target="_blank">Learn more about Median.</a><br>
-        <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">Learn more about Mean.</a><br>
-        <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Learn more about Mode.</a><br>
-        <a href="https://en.wikipedia.org/wiki/Variance" target="_blank">Learn more about Variance.</a><br>
-        <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">Learn more about Standard Deviation.</a><br>
-    </nav>
-    </fieldset>
-
+    <div>
+        <dialog open>Click on the links below to learn more about these values!</dialog>
+        
+        <center><fieldset>
+        <nav>
+            <a href="https://en.wikipedia.org/wiki/Summation" target="_blank">Learn more about Sum.</a><br>
+            <a href="https://en.wikipedia.org/wiki/Median" target="_blank">Learn more about Median.</a><br>
+            <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">Learn more about Mean.</a><br>
+            <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Learn more about Mode.</a><br>
+            <a href="https://en.wikipedia.org/wiki/Variance" target="_blank">Learn more about Variance.</a><br>
+            <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">Learn more about Standard Deviation.</a><br>
+        </nav>
+        </fieldset></center>
+    </div>
     <br>
+
+    <!-- I am going to comment out the video tag for now until we have a better idea of what we want to do with it.
+
     <center><video controls autoplay loop>
         <source src="videos/CalculatorVideo.mp4" type="video/mp4">
     </video></center>
+
+    -->
+
     <address style="float: right; position: relative; top: -5em" >
         <details>
             <summary>Contact information:</summary>
