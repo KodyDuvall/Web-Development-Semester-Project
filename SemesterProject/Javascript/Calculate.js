@@ -234,9 +234,7 @@ function DetermineModes(entriesArray){
         resultantArray[1] = maximumCount.toString();
 
         return resultantArray;
-    }
-
-    
+    }    
 }
 
 //I tried to get a little clever with this function. I might start writing more code like this to keep the files shorter.
