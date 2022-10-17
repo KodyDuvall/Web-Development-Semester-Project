@@ -1,3 +1,31 @@
+body{
+    background-color: wheat;
+}
+
+hr{
+    border-style:none;
+    /*border: 10px solid black;
+    border-style: solid;
+    color: sandybrown;
+    height: 20px;
+    background-color: sandybrown;*/
+}
+
+div.stripColor{
+    background-color: sandybrown;
+    text-align: left;
+}
+
+div.stripColorAlternative{/*I need this so that the background color strips stop going past the first image*/
+    background-color: sandybrown;
+    text-align: left;
+    margin-right: 25em;/*This is probably super bad practice, I am just not knowledgeable enough to know how to do this another way.*/
+}
+
+mark{
+    background-color: sandybrown;
+}
+
 h1.AlignHeaders{
     text-align: center;
 }
@@ -13,11 +41,11 @@ p.TextboxPara{
 
 textarea{
     resize: none;
+    font-size: large;
 }
 
 div{
     text-align: center;
-    position: relative;
 }
 
 img.PopSD{
@@ -40,6 +68,8 @@ img.NormalDist{
     float: right;
     margin-right: 5%;
     object-fit: cover;
+    z-index: 1;
+    position: relative;
 }
 
 button.button1 {
@@ -69,7 +99,7 @@ label.population{
 select{
     margin-bottom: 2.65em;
     text-align: center;
-    position: relative; left: -26.4em;
+    position: relative; left: -31.6em;
     width: 8em;
     height: 2em;
 }
