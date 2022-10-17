@@ -1,42 +1,28 @@
 document.getElementById('ButtonID').addEventListener('click', ButtonClick);
-//var buttonSound = new Audio("audio/ButtonSound.wav");
-
-let userInput = "";
-let tempString = "";
-let isCorrectFormat;
-let periodCount;//Because Javascript thinks things like 1.3.1.41.45 = 1.3  ?????
-let entries = [];
-let modeInformationArray = [];
-let sum;
-let mean;
-let variance;
-let mode;
-let modeOccurrenceNum;
-let standardDeviation;
-let median;
 
 function ButtonClick(){
     window.localStorage.clear();
     //buttonSound.play(); I couldn't get this working properly. I will if I can another time.
     
-    sum = 0;
-    mean = 0;
-    variance = 0;
-    standardDeviation = 0;
-    periodCount = 0;
-    median = 0;
-    mode = "";
-    modeOccurrenceNum = "";
-    tempString = "";
-    entries.splice(0, entries.length);//This removes all entries from the array
-    isCorrectFormat = true;
-    userInput = document.getElementById('TextAreaID').value;//get textarea contents
+    let sum = 0;
+    let mean = 0;
+    let variance = 0;
+    let standardDeviation = 0;
+    let periodCount = 0; //Because Javascript thinks things like 1.3.1.41.45 = 1.3  ?????
+    let median = 0;
+    let mode = "";
+    let modeOccurrenceNum = "";
+    let tempString = "";
+    let entries = [];
+    let isCorrectFormat = true;
+    let userInput = document.getElementById('TextAreaID').value;//get textarea contents
 
     /*
         The for loop below is rather large, busy, and perhaps somewhat unnecessarily convoluted, but I will 
         do my best to explain everything that is happening. 
     */
 
+    entries.splice(0, entries.length);//This removes all entries from the array
     for(let i = 0; i < userInput.length; i++){
         if (userInput[i] === ','){//here it checks to see the current character is a comma (a crucial component to the required format)
             if(!parseFloat(tempString)){//Since commas signify the end of an entry, we need to check to see if the entry is valid
