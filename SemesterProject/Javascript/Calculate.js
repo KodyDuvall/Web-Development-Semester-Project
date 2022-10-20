@@ -8,7 +8,8 @@ function ButtonClick(){
     let mean = 0;
     let variance = 0;
     let standardDeviation = 0;
-    let periodCount = 0; //Because Javascript thinks things like 1.3.1.41.45 = 1.3  ?????
+    let periodCount = 0; //Because Javascript thinks things like 1.3.1.41.45 = 1.3
+    let hyphenCount = 0;//I completely forgot about negative numbers, oops. (added 10/20/2022)
     let median = 0;
     let mode = "";
     let modeOccurrenceNum = "";
@@ -34,11 +35,12 @@ function ButtonClick(){
                 entries.push(parseFloat(tempString));//if the entry is valid, parse it to a numeric value and store it in the array
                 tempString = "";//empty the string variable that temporarily stores the entry
                 periodCount = 0;//reset this count for next entry
+                hyphenCount = 0;
             }
         }
     
         else{//if current character is not a comma, it will check a few things
-            if(isNaN(userInput[i]) && userInput[i] !== '.'){//here it will see if the character is not a number or if it is a period.
+            if(isNaN(userInput[i]) && userInput[i] !== '.' && userInput[i] !== '-'){//here it will see if the character is not a number, a period, or a hyphen.
                 isCorrectFormat = false;//if the character is not a number and is not a period, then it is impossible for it to be valid
                 break;//break out of loop to save time.
             }
@@ -56,7 +58,22 @@ function ButtonClick(){
                         tempString += userInput[i];
                     }
                 }
+
+                //This handles negative numbers \
+                else if(userInput[i] === '-'){
+                    hyphenCount++;
     
+                    if(hyphenCount === 2){
+                        isCorrectFormat = false;
+                        break;
+                    }
+                    
+                    else{
+                        tempString += userInput[i];
+                    }
+                }
+                //end new code
+
                 else{//if the character is not a period, then it must be a number, which is acceptable, so it is stored.
                     tempString += userInput[i];
                 }
