@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Standard Deviation Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href=style.css rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/index.css">
 </head>
 <body>
@@ -75,7 +79,7 @@
     <hr>
 
     <div class="stripColor">
-        <h1 class="AlignHeaders"><pre>Run the calculation</pre></h1>
+        <h1 class="AlignHeaders">Run the calculation</h1>
     </div>
     
     <p class="TextboxPara">The user can choose to calculate the popoulation/sample standard deviation by selecting the appropriate option from the dropdown menu. 
@@ -102,10 +106,10 @@
         I have the button sound playing on the dropdown menu instead of the actual calculate button because the
         sound that is played from the wav file isn't preserved when a new page loads. This means that if the user 
         enters his or her data values using the correct format and then pressed the calculate button, the sound file 
-        cannot be heard because it will immediate load the next page. I will see if I can address this later, but for 
+        cannot be heard because it will immediately load the next page. I will see if I can address this later, but for 
         now at least it makes some sense for the sound to play once the user clicks on the dropdown menu
     -->
-    <select onclick="playSound()" id="typeSelection">
+    <select onclick="playSound()" id="typeSelection" class="dropdown">
         <option id="sample" selected>Sample</option>
         <option id="population" >Population</option>
     </select>
@@ -120,7 +124,7 @@
 
     <form>
     <textarea name="Textarea" id="TextAreaID" cols="90" rows="6">41, 56, 48, 61, 41, 55, 56, 70, 39, 43</textarea>
-    <button  class="button1" id="ButtonID" type="button">Calculate</button>
+    <button  class="btn btn-primary" class="button1" id="ButtonID" type="button">Calculate</button>
     </form>
 
     <script type="text/javascript" src="Javascript/Calculate.js"></script><!--NOTE: It appears that the script tag must go AFTER the tags that are involved in the script-->
