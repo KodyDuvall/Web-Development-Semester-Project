@@ -3,7 +3,10 @@ body{
 }
 
 div.stripColor{
-    background-color: sandybrown;
+    background-color: #6d95ebd4;
+    border-radius: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 h1{
@@ -36,29 +39,39 @@ label.moveStandardDeivation{
 }
 
 label.modeLabel{
-    position: relative; top: -16em; left: 10em;
+    position: relative; top: -22em; left: 12.15em;
     text-align: left;
     margin: 2em;
+    background-color: #6d95ebd4;
+    border-spacing: 0em;
+    border-radius: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
-table{
+table{/*I want to figure out how to give this table rounded edges. It isn't as simple to accomplish this for the table as it is for the text area.*/
     background-color: white;
-    border-spacing: 0em;
+    border: 6px solid #6d95ebd4;
+    border-spacing: 0px;
+    border-right: 6px solid #6d95ebd4;
+    border-bottom: 6px solid #6d95ebd4;
+    border-radius: 1em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    position: relative; left: -15em;
+    position: relative; left: -15em; top: 3em;
     size: 20em;
     font-size:large;
 }
 
 textarea{
-    border: 6px solid grey;
-    border-right: 6px solid grey;
-    border-bottom: 6px solid grey;
+    border: 6px solid #6d95ebd4;
+    border-right: 6px solid #6d95ebd4;
+    border-bottom: 6px solid #6d95ebd4;
+    border-radius: 1em;
     font-size: larger;
     resize: none;
-    position: relative; top: -10em; left: 12em;
+    position: relative; top: -8em; left: 12em;
 }
 
 fieldset{
@@ -91,4 +104,8 @@ video{
 
 p{
     font-size: larger;
+    background-color: #6d95ebd4;
+    border-radius: 10em;
+    padding-left: 1em;
+    padding-right: 1em;
 }

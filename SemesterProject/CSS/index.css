@@ -12,18 +12,24 @@ hr{
 }
 
 div.stripColor{
-    background-color: sandybrown;
+    background-color: #6d95ebd4;
     text-align: left;
+    border-radius: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 div.stripColorAlternative{/*I need this so that the background color strips stop going past the first image*/
-    background-color: sandybrown;
+    background-color: #6d95ebd4;
     text-align: left;
-    margin-right: 25em;/*This is probably super bad practice, I am just not knowledgeable enough to know how to do this another way.*/
+    margin-right: 32em;/*This is probably super bad practice, I am just not knowledgeable enough to know how to do this another way.*/
+    border-radius: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 mark{
-    background-color: sandybrown;
+    background-color: #6d95ebd4;
 }
 
 h1.AlignHeaders{
@@ -31,17 +37,21 @@ h1.AlignHeaders{
 }
 
 p{
-    font-size: larger;
+    font-size: large;
 }
 
 p.TextboxPara{
-    font-size: larger;
+    font-size: large;
     text-align: center;
 }
 
 textarea{
     resize: none;
     font-size: large;
+    border: 6px solid #6d95ebd4;
+    border-right: 6px solid #6d95ebd4;
+    border-bottom: 6px solid #6d95ebd4;
+    border-radius: 1em;
 }
 
 div{
@@ -72,11 +82,12 @@ img.NormalDist{
     position: relative;
 }
 
-button.button1 {
-    color: black;
+button.btn{
+    color: white;
+    background-color: #6d95ebd4;
     padding: 15px 32px;
     text-align: center;
-    position:relative; left: 2rem; top: -3rem; /*I had to use pixels here for the top component instead of percentage. I don't know why.*/
+    position:relative; left: 2rem; top: -3rem;
 }
 
 input.sample{
@@ -99,8 +110,8 @@ label.population{
 select{
     margin-bottom: 2.65em;
     text-align: center;
-    position: relative; left: -31.6em;
-    width: 8em;
+    position: relative; left: -23.8em;
+    width: 10em;
     height: 2em;
 }
 
