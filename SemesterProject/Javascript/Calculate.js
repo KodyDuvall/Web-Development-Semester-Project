@@ -2,7 +2,7 @@ document.getElementById('ButtonID').addEventListener('click', ButtonClick);
 
 function ButtonClick(){
     window.localStorage.clear();
-    //buttonSound.play(); I couldn't get this working properly. I will if I can another time.
+    //buttonSound.play(); I couldn't get this working properly. I will see if I can another time.
     
     let sum = 0;
     let mean = 0;
@@ -41,7 +41,7 @@ function ButtonClick(){
     
         else{//if current character is not a comma, it will check a few things
             if(isNaN(userInput[i]) && userInput[i] !== '.' && userInput[i] !== '-'){//here it will see if the character is not a number, a period, or a hyphen.
-                isCorrectFormat = false;//if the character is not a number and is not a period, then it is impossible for it to be valid
+                isCorrectFormat = false;//if the character is not a number, hyphen, or a period then it is impossible for it to be valid
                 break;//break out of loop to save time.
             }
             
@@ -74,7 +74,7 @@ function ButtonClick(){
                 }
                 //end new code
 
-                else{//if the character is not a period, then it must be a number, which is acceptable, so it is stored.
+                else{//if the character is not a period or a hyphen, then it must be a number, which is acceptable, so it is stored.
                     tempString += userInput[i];
                 }
             }
@@ -94,27 +94,27 @@ function ButtonClick(){
     }
     
     if(isCorrectFormat){//this if block handles what happens when all entries are considered valid
-        sum = CalculateSum(entries);
-        mean = CalculateMean(sum, entries.length);
+        sum = CalculateSum(entries);//calculate sum
+        mean = CalculateMean(sum, entries.length);//calculate mean
 
         var e = document.getElementById("typeSelection");
         var text = e.options[e.selectedIndex].text;
 
-        if(text === "Population"){//if population radio button is selected, this if condition will be true
+        if(text === "Population"){//if population is selected from the dropdown menu, run the following code
             variance = CalculateVariance(mean, entries, entries.length);
             standardDeviation = Math.sqrt(variance);
         }
 
-        else if(text === "Sample"){//if sample radio button is selected, this else if condition will be true
+        else if(text === "Sample"){//if sample is selected from the dropdown menu, run the following code
             variance = CalculateVariance(mean, entries, entries.length - 1);
             standardDeviation = Math.sqrt(variance);
         }
 
-        median = FindMedian(entries);
+        median = FindMedian(entries);//calculate median
 
-        modeInformationArray = DetermineModes(entries);
-        mode = modeInformationArray[0];
-        modeOccurrenceNum = modeInformationArray[1];
+        modeInformationArray = DetermineModes(entries);//copy data from function to this array
+        mode = modeInformationArray[0];//get mode
+        modeOccurrenceNum = modeInformationArray[1];//get the number of times each mode occurred 
 
         //usage of localStorage seems necessary in order for data to be transferred amongest different web pages
         //localStorage uses a Key-Value pair system, like the dictionary data structure
@@ -183,33 +183,33 @@ function DetermineModes(entriesArray){
     entriesArray.sort(function(a, b){return b - a});
     
     for(let i = 0; i < entriesArray.length; i++){
-        currentElement = entriesArray[i];
-        count = 0;
+        currentElement = entriesArray[i];//get the current element in the entriesArray
+        count = 0;//the count needs to be reset to zero for each interation
 
         if(currentElement === entriesArray[i + 1]){//this is here to save time on useless checks
             for(let I = i; I < entriesArray.length; I++){
-                if(currentElement === entriesArray[I]){
-                    count++;
-                    i++;
+                if(currentElement === entriesArray[I]){//if the current element is equal to another element in the entriesArray, it will have occured more than once
+                    count++;//incrment count
+                    i++;//we want to increment i to ensure that the same value is not processed multiple times
     
                     if(I === entriesArray.length - 1){ //to ensure last element is captured
-                        countArray.push(count);
-                        countParallelArray.push(currentElement);
-                        break;    
+                        countArray.push(count);//store the count of this element in the count array
+                        countParallelArray.push(currentElement);//store the actual value in this array. 
+                        break;//break out of the inner loop
                     }
                 }
     
-                else{
-                    countArray.push(count);
-                    countParallelArray.push(currentElement);
-                    i--;
-                    break;
+                else{//if the current element that is being assessed does not equal the element of EntriesArray[I], then, because the array is sorted, the current element's value won't appear again in the array, and therefore we have its maximum count
+                    countArray.push(count);//store the count of this element in the count array
+                    countParallelArray.push(currentElement);//store the actual value in this array. 
+                    i--;//We need to decrement i because once we break out of the inner loop, i will be incremented by the for loop's condition. We need to ensure we set currentElement to the correct element in the array.
+                    break;//break out of the inner loop
                 }
             }
         }
     }
 
-    maximumCount = 1;
+    maximumCount = 1;//set the maximum variable to 1 because each value must have occured at least once.
 
     for(let i = 0; i < countArray.length; i++){//find max
         if(countArray[i] > maximumCount){
@@ -217,9 +217,9 @@ function DetermineModes(entriesArray){
         }
     }
 
-    if(maximumCount === 1){
-        resultantArray[0] = "No value has a frequency greater than one.";
-        resultantArray[1] = maximumCount.toString();
+    if(maximumCount === 1){//if the max count is equal to 1, then there is no reason to show the user the mode because then every entry would be the mode.
+        resultantArray[0] = "No value has a frequency greater than one.";//this will be shown to the user
+        resultantArray[1] = maximumCount.toString();//go ahead and inform the user that each value occured at least once. why not 
 
         return resultantArray;
     }
@@ -227,28 +227,28 @@ function DetermineModes(entriesArray){
     else{
         for(let i = 0; i < countArray.length; i++){
             if(countArray[i] === maximumCount){
-                modesString += countParallelArray[i].toString() + ", ";
+                modesString += countParallelArray[i].toString() + ", ";//I want to show the user the modes with commas inbetween each value. This will add a comma and a space at the end of each value.
             }
         }
 
-        modesString = modesString.slice(0, -1);
-        modesString = modesString.slice(0, -1);
-        resultantArray[0] = modesString;
-        resultantArray[1] = maximumCount.toString();
+        modesString = modesString.slice(0, -1);//remove the space at the end of this string
+        modesString = modesString.slice(0, -1);//remove the comma at the end of this string.
+        resultantArray[0] = modesString;//store the string of modes in this array
+        resultantArray[1] = maximumCount.toString();//store their maximum count in this array
 
-        return resultantArray;
+        return resultantArray;//returns an array because I needed to return more then one value. I am sure there is a better way of doing this, but I was unable to find a better solution at the time I wrote this code.
     }    
 }
 
 //I tried to get a little clever with this function. I might start writing more code like this to keep the files shorter.
 function FindMedian(entriesArray){
-    entriesArray.sort(function(a, b){return b - a});
+    entriesArray.sort(function(a, b){return b - a});//sort the array. It being in reverse doesn't matter for finding the mode
 
-    if(entriesArray.length % 2 === 1){
-        return (entriesArray[(Math.ceil(entriesArray.length / 2) - 1)]);
+    if(entriesArray.length % 2 === 1){//if the length of the entries is odd, then we find the mode by finding the central value. The mode is equal to exactly this value.
+        return (entriesArray[(Math.ceil(entriesArray.length / 2) - 1)]);//one way of finding the mode if entry count is odd
     }
 
-    else{
-        return ((entriesArray[(entriesArray.length / 2) - 1] + entriesArray[(entriesArray.length / 2)]) / 2);
+    else{//if the length of the entries is even, then the mode is equal to the two most central values being halved. 
+        return ((entriesArray[(entriesArray.length / 2) - 1] + entriesArray[(entriesArray.length / 2)]) / 2);//this is one way of finding the mode when the entries count is even
     }
 }
