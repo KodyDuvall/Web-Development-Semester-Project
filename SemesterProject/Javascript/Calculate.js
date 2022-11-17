@@ -184,7 +184,7 @@ function DetermineModes(entriesArray){
     
     for(let i = 0; i < entriesArray.length; i++){
         currentElement = entriesArray[i];//get the current element in the entriesArray
-        count = 0;//the count needs to be reset to zero for each interation
+        count = 0;//the count needs to be reset to zero for each iteration
 
         if(currentElement === entriesArray[i + 1]){//this is here to save time on useless checks
             for(let I = i; I < entriesArray.length; I++){
@@ -242,13 +242,13 @@ function DetermineModes(entriesArray){
 
 //I tried to get a little clever with this function. I might start writing more code like this to keep the files shorter.
 function FindMedian(entriesArray){
-    entriesArray.sort(function(a, b){return b - a});//sort the array. It being in reverse doesn't matter for finding the mode
+    entriesArray.sort(function(a, b){return b - a});//sort the array. It being in reverse doesn't matter for finding the median
 
-    if(entriesArray.length % 2 === 1){//if the length of the entries is odd, then we find the mode by finding the central value. The mode is equal to exactly this value.
-        return (entriesArray[(Math.ceil(entriesArray.length / 2) - 1)]);//one way of finding the mode if entry count is odd
+    if(entriesArray.length % 2 === 1){//if the length of the entries is odd, then we find the median by finding the central value. The median is equal to exactly this value.
+        return (entriesArray[(Math.ceil(entriesArray.length / 2) - 1)]);//one way of finding the median if entry count is odd
     }
 
-    else{//if the length of the entries is even, then the mode is equal to the two most central values being halved. 
-        return ((entriesArray[(entriesArray.length / 2) - 1] + entriesArray[(entriesArray.length / 2)]) / 2);//this is one way of finding the mode when the entries count is even
+    else{//if the length of the entries is even, then the median is equal to the two most central values being halved. 
+        return ((entriesArray[(entriesArray.length / 2) - 1] + entriesArray[(entriesArray.length / 2)]) / 2);//this is one way of finding the median when the entries count is even
     }
 }
