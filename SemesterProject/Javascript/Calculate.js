@@ -15,6 +15,7 @@ function ButtonClick(){
     let modeOccurrenceNum = "";
     let tempString = "";
     let entries = [];
+    let modeInformationArray = [];
     let isCorrectFormat = true;
     let userInput = document.getElementById('TextAreaID').value;//get textarea contents
 
