@@ -38,6 +38,7 @@ h1.AlignHeaders{
 
 p{
     font-size: large;
+    padding-left: 1em;
 }
 
 p.TextboxPara{
@@ -117,4 +118,9 @@ select{
 
 blockquote{
     font-size: larger;
+    padding-left: 1em;
+}
+
+h3{
+    padding-left: 1em;
 }
