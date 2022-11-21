@@ -51,7 +51,7 @@ function ButtonClicked(){
 
     else{
         for(let i = 0; i < userInput.length; i++){
-            if(isNaN(userInput[i] || userInput[i] === ' ')){
+            if(isNaN(userInput[i])){
                 isCorrrectFormat = false;
                 errorMessage += "Please ensure that your input is numeric and greater than zero when asked how " +
                 "many random numbers you want generated." + "\r\n" + "\r\n";
@@ -131,6 +131,7 @@ function ButtonClicked(){
         }
 
         else{
+            hyphenCount = 0;
             for(let i = 0; i < userInput.length; i++)   {
                 if(userInput[i] !== '-' && isNaN(userInput[i])){
                     isCorrrectFormat = false;
@@ -230,6 +231,9 @@ function ButtonClicked(){
         }
 
         else{
+            hyphenCount = 0;
+            periodCount = 0;
+            
             for(let i = 0; i < userInput.length; i++){
                 if(userInput[i] !== '-' && userInput[i] !== '.' && isNaN(userInput[i])){
                     isCorrrectFormat = false;
