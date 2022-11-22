@@ -51,7 +51,7 @@ label.modeLabel{
 }
 
 label.modeLabelRandom{
-    position: relative; top: -49.5em; left: -9.5em;
+    position: relative; top: 3em; left: -9.5em;
     text-align: left;
     margin: 2em;
     background-color: #6d95ebd4;
@@ -59,8 +59,21 @@ label.modeLabelRandom{
     border-radius: 1em;
     padding-left: 1em;
     padding-right: 1em;
-    
+    margin-bottom: -15em;
 }
+
+textarea.randomNumbersTextAreaClass{
+    border: 6px solid #6d95ebd4;
+    border-right: 6px solid #6d95ebd4;
+    border-bottom: 6px solid #6d95ebd4;
+    border-radius: 1em;
+    font-size: larger;
+    resize: none;
+    display: inline-block;
+    position: relative; top: -19em; left: 22em;
+    margin-bottom: -20em;
+}
+
 textarea.classForModesRandom{
     border: 6px solid #6d95ebd4;
     border-right: 6px solid #6d95ebd4;
@@ -69,7 +82,8 @@ textarea.classForModesRandom{
     font-size: larger;
     resize: none;
     display: inline-block;
-    position: relative; top: -38.5em; left: -41em;
+    position: relative; top: -6em; left: -41em;
+    margin-bottom: -20em;
 }
 
 table{/*I want to figure out how to give this table rounded edges. It isn't as simple to accomplish this for the table as it is for the text area.*/
@@ -97,16 +111,6 @@ textarea.classForModes{
     position: relative; top: -8em; left: 12em;
 }
 
-textarea.randomNumbersTextAreaClass{
-    border: 6px solid #6d95ebd4;
-    border-right: 6px solid #6d95ebd4;
-    border-bottom: 6px solid #6d95ebd4;
-    border-radius: 1em;
-    font-size: larger;
-    resize: none;
-    display: inline-block;
-    position: relative; top: -7.6em; left: 22em;
-}
 
 
 fieldset{
