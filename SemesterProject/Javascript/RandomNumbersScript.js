@@ -387,7 +387,7 @@ function ButtonClickedSort(){
     //For unknown reasons, the output of sortedRanNumsString would have 2 spaces between some of the numbers instead of just one.
     //Since I could not figure out why this was happening, I just used a small replace regex as a band aid fix for now.
     //Curiously, the extra spacing will still sometimes occur, but it is much less likely to occur with this replace method here from my testing.
-    //Also, if I kept press the sort button before I implemented the replace method, I would get a bunch of NaN errors displayed in the text area.
+    //Also, if I kept pressing the sort button before I implemented the replace method, I would get a bunch of NaN errors displayed in the text area.
     //This is not occuring anymore after the implementation of the replace method.  
     sortedRanNumsString = sortedRanNumsString.replace(/ {2,}/g, ' ');
 
