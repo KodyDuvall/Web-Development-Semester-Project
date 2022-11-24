@@ -3,6 +3,7 @@
  */
 
 document.getElementById('ButtonID_RanNums').addEventListener('click', ButtonClicked);
+document.getElementById('ButtonID_Sort').addEventListener('click', ButtonClickedSort);
 
 function ButtonClicked(){
     let isCorrrectFormat = true;
@@ -348,6 +349,53 @@ function getRandomNumbers(lBound, uBound, quantity, type){
     }
 
     return numsArray;
+}
+
+function ButtonClickedSort(){
+    let userInput = document.getElementById('randomNumbersTextArea').value;
+    let tempString = "";
+    let sortedRanNumsString = "";
+    let numsArray = [];
+
+    if(userInput.length === 0){
+        alert("You need to generate random numbers first.");
+    }
+
+    else{
+        //userInput = userInput.trim();
+        for(let i = 0; i < userInput.length; i++){
+            if(userInput[i] === ','){
+                numsArray.push(parseFloat(tempString));
+                tempString = "";
+            }
+            else{
+                tempString += userInput[i];
+            }
+        }
+    }
+
+    numsArray.push(tempString);
+
+    //numsArray.sort(function(a, b){return b - a});
+    //numsArray.reverse();
+    numsArray.sort(function(a, b){return a - b});
+
+    for(let i = 0; i < numsArray.length; i++){
+        sortedRanNumsString += numsArray[i] + ", ";
+    }
+
+    //For unknown reasons, the output of sortedRanNumsString would have 2 spaces between some of the numbers instead of just one.
+    //Since I could not figure out why this was happening, I just used a small replace regex as a band aid fix for now.
+    //Curiously, the extra spacing will still sometimes occur, but it is much less likely to occur with this replace method here from my testing.
+    //Also, if I kept press the sort button before I implemented the replace method, I would get a bunch of NaN errors displayed in the text area.
+    //This is not occuring anymore after the implementation of the replace method.  
+    sortedRanNumsString = sortedRanNumsString.replace(/ {2,}/g, ' ');
+
+
+    sortedRanNumsString = sortedRanNumsString.slice(0, -1);
+    sortedRanNumsString = sortedRanNumsString.slice(0, -1);
+
+    document.getElementById('randomNumbersTextArea').textContent = sortedRanNumsString;        
 }
 
 //Below I just copied and pasted the code from our other file
