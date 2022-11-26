@@ -25,7 +25,7 @@
         <h2>What is Standard Deviation?</h2>
     </div>   
 
-    <p>In statistics, the standard deviation refers to the measure of variation amongst a set of given data values, with relation to the mean of the set. 
+    <p class="nonModal">In statistics, the standard deviation refers to the measure of variation amongst a set of given data values, with relation to the mean of the set. 
                 A measure of variation is often described as a way of showing how data is dispersed. Simply put, the standard 
                 deviation can show one how far apart his or her data points are spread out.
     </p> 
@@ -36,7 +36,7 @@
         <h2>Why calculate the standard deviation?</h2>
     </div>
 
-    <p>Since the standard deviation can inform one on how closely centralized or spread out a collection of outcomes are, 
+    <p class="nonModal">Since the standard deviation can inform one on how closely centralized or spread out a collection of outcomes are, 
         it often becomes easier to make inferences about the data, which can lead to more precise decisions. An example
         where the standard deviation is often calculated would be its uses in finance, which owners of a business can use to 
         understand risk management regarding an assortment of financial outcomes. This information can be used to make better 
@@ -49,7 +49,7 @@
         <h2>The types of standard deviation.</h2>
     </div>
 
-    <p>There are two types of standard deviation calculations. These two types are the <b>population standard deviation</b>, and the <b>sample standard deviation</b>. 
+    <p class="nonModal">There are two types of standard deviation calculations. These two types are the <b>population standard deviation</b>, and the <b>sample standard deviation</b>. 
         The distinction between these two calculations is worth considering because of what is known as statistical bias. Statistical bias is often 
         defined as a systematic deviation from the actual value. It relates to a statistic that can underestimate or overestimate the population 
         parameter that is attempting to be measured.
@@ -57,7 +57,7 @@
 
     <img class="SampleSD" src="Images/Pop_SD.png">
     <h3>The population standard deviation.</h3>
-    <p><blockquote>The population standard deviation is said to be a <u><i>parameter</i></u>. That is, it describes a number that represents an entire population. So a 
+    <p class="nonModal"><blockquote>The population standard deviation is said to be a <u><i>parameter</i></u>. That is, it describes a number that represents an entire population. So a 
         population data set must contain all members of a specified group. An example where one would need to use the population standard deviation 
         would be when a basketball team coach wants to determine the standard deviation and the mean of the scores for all members on his basketball team. The reason 
         the population standard deviation would be used here and not the sample standard deviation is because the coach is only concerned with the 
@@ -67,7 +67,7 @@
 
     <img class="PopSD" src="Images/Sample_SD.png">
     <h3>The sample standard deviation.</h3>
-    <p><blockquote> The sample standard deviation is considered to be a <u><i>statistic</i></u>. This means that the sample standard deviation is a calculation that is only 
+    <p class="nonModal"><blockquote> The sample standard deviation is considered to be a <u><i>statistic</i></u>. This means that the sample standard deviation is a calculation that is only 
         derived from some members that are in a population. An example where one would need to use the sample standard deviation would be when a 
         biologist would want to determine the mean and standard deviation of the weight of a specific species of crab. It would be nearly impossible to 
         gather data for every member of the group (which would be every alive and every recently dead crab of the target species), instead the biologist 
@@ -96,7 +96,7 @@
     <label class="population" for="population">Population</label><br>
 -->
 
-    <div>
+    <div class="nonModal">
     <audio id="sound">
         <source id="sounds" src="audio/ButtonSound.wav" type="audio/wav">
     </audio>
@@ -127,9 +127,34 @@
     <button  class="btn btn-primary" class="button1" id="ButtonID" type="button">Calculate</button>
     </form>
 
-    <script type="text/javascript" src="Javascript/Calculate.js"></script><!--NOTE: It appears that the script tag must go AFTER the tags that are involved in the script-->
-    <script type="text/javascript" src="Javascript/Results.js"></script> 
+    
+    <!--This modal is used as an error notification when user input is not in the correct format. See JS scripts-->
+    <div class="modal" id="myModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Error Message:</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body"><p style="font-size:large;" id="ERROR"></p>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button style="position:relative; left: -.4rem; top: .2rem;" type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+            
+        </div>
     </div>
+</div>
+
+<script type="text/javascript" src="Javascript/Calculate.js"></script><!--NOTE: It appears that the script tag must go AFTER the tags that are involved in the script-->
+<script type="text/javascript" src="Javascript/Results.js"></script> 
+
     <!--On click, go to next page: onclick="location.href='calculationPage.html'"-->
     <br>
     <footer style="float: right;">
