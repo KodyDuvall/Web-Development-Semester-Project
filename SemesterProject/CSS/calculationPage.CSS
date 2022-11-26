@@ -73,7 +73,10 @@ textarea.randomNumbersTextAreaClass{
     position: relative; top: -19em; left: 22em;
     margin-bottom: -20em;
 }
-
+a{
+    /*margin-right: 23em;*/
+    display: inline-block;
+}
 textarea.classForModesRandom{
     border: 6px solid #6d95ebd4;
     border-right: 6px solid #6d95ebd4;
@@ -150,7 +153,7 @@ p.paraWithBackground{
 }
 button.btn{
     color: white;
-    background-color: #6d95ebd4;
+    /*background-color: #6d95ebd4;*/
     padding: 15px 32px;
     text-align: center;
  
