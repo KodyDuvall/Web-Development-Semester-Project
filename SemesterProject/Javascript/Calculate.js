@@ -2,6 +2,7 @@ document.getElementById('ButtonID').addEventListener('click', ButtonClick);
 
 function ButtonClick(){
     window.localStorage.clear();
+    let myModal = new bootstrap.Modal(document.getElementById('myModal1'));
     //buttonSound.play(); I couldn't get this working properly. I will see if I can another time.
     
     let sum = 0;
@@ -132,9 +133,9 @@ function ButtonClick(){
     }
     
     else{//this else block handles what happens when one or more entries is not valid
-        alert("Incorrect format");
-        /*I want to do something else here other than just inform the user that the contents of the textarea is not in the
-          right format using a pop-up message. I might want to make the text box red as well or something like that.*/
+        //alert("Incorrect format");
+        myModal.show();
+        document.getElementById("ERROR").textContent = "Incorrect format.";
     }
 }
 

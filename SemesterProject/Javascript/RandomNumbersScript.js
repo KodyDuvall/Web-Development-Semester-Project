@@ -6,6 +6,7 @@ document.getElementById('ButtonID_RanNums').addEventListener('click', ButtonClic
 document.getElementById('ButtonID_Sort').addEventListener('click', ButtonClickedSort);
 
 function ButtonClicked(){
+    let myModal = new bootstrap.Modal(document.getElementById('myModal'));
     let isCorrrectFormat = true;
     let spaceErrorDetected = false;
     let hyphenCount = 0;
@@ -273,14 +274,19 @@ function ButtonClicked(){
             } 
         }
     }
-
+    
+    //myModal.show(); // show modal
+    //myModal.hide(); // hide modal
     if(lowerBound > 100000000 || lowerBound < -100000000 || upperBound > 100000000 || upperBound < -100000000){
         isCorrrectFormat = false;
         errorMessage += "Your lower and upper bounds cannot be less than -100000000 or greater than 100000000." + "\r\n" + "\r\n";
     }
 
     if(!isCorrrectFormat){
-        alert(errorMessage);
+        //alert(errorMessage);
+        
+          myModal.show();
+          document.getElementById("ERROR").textContent = errorMessage;
     }
 
     else{
@@ -352,13 +358,16 @@ function getRandomNumbers(lBound, uBound, quantity, type){
 }
 
 function ButtonClickedSort(){
+    let myModal = new bootstrap.Modal(document.getElementById('myModal'));
     let userInput = document.getElementById('randomNumbersTextArea').value;
     let tempString = "";
     let sortedRanNumsString = "";
     let numsArray = [];
 
     if(userInput.length === 0){
-        alert("You need to generate random numbers first.");
+        //alert("You need to generate random numbers first.");
+        myModal.show();
+        document.getElementById("ERROR").textContent = "You need to generate random numbers first.";
     }
 
     else{
