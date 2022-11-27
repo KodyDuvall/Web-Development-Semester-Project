@@ -275,8 +275,6 @@ function ButtonClicked(){
         }
     }
     
-    //myModal.show(); // show modal
-    //myModal.hide(); // hide modal
     if(lowerBound > 100000000 || lowerBound < -100000000 || upperBound > 100000000 || upperBound < -100000000){
         isCorrrectFormat = false;
         errorMessage += "Your lower and upper bounds cannot be less than -100000000 or greater than 100000000." + "\r\n" + "\r\n";
